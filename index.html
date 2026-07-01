@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Global Trade | Premium Logistics & Freight Forwarding</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom Premium Palette Variables mapped for utility reference */
+        .bg-midnight { background-color: #0B132B; }
+        .bg-nexus-gold { background-color: #C5A880; }
+        .text-nexus-gold { color: #C5A880; }
+        .border-nexus-gold { border-color: #C5A880; }
+        .hover-gold:hover { color: #E5C494; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+    <header class="bg-[#0B132B] text-white sticky top-0 z-50 border-b border-gray-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+                    <div class="w-10 h-10 bg-gradient-to-br from-[#C5A880] to-[#E5C494] rounded-lg flex items-center justify-center shadow-lg">
+                        <i class="fa-solid fa-earth-americas text-[#0B132B] text-xl animate-pulse"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-wider block">NEXUS</span>
+                        <span class="text-xs tracking-[0.2em] uppercase text-[#C5A880] -mt-1 block">Global Trade</span>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                    <button onclick="navigateTo('home')" class="nav-link text-white hover:text-[#C5A880] transition-colors duration-200">Home</button>
+                    <button onclick="navigateTo('services')" class="nav-link text-gray-300 hover:text-[#C5A880] transition-colors duration-200">Services</button>
+                    <button onclick="navigateTo('tracker')" class="nav-link text-gray-300 hover:text-[#C5A880] transition-colors duration-200">Track Shipment</button>
+                    <button onclick="navigateTo('quote')" class="nav-link text-gray-300 hover:text-[#C5A880] transition-colors duration-200">Freight Calculator</button>
+                </nav>
+
+                <div class="hidden md:block">
+                    <button onclick="navigateTo('quote')" class="bg-gradient-to-r from-[#C5A880] to-[#E5C494] text-[#0B132B] font-semibold px-5 py-2.5 rounded shadow-md hover:opacity-90 transition-opacity text-sm">
+                        Get a Quote
+                    </button>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0F1C3F] border-t border-gray-800 transition-all duration-300">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
+                <button onclick="navigateTo('home')" class="block w-full py-3 px-4 text-white font-medium hover:bg-[#16295B]">Home</button>
+                <button onclick="navigateTo('services')" class="block w-full py-3 px-4 text-gray-300 font-medium hover:bg-[#16295B]">Services</button>
+                <button onclick="navigateTo('tracker')" class="block w-full py-3 px-4 text-gray-300 font-medium hover:bg-[#16295B]">Track Shipment</button>
+                <button onclick="navigateTo('quote')" class="block w-full py-3 px-4 text-gray-300 font-medium hover:bg-[#16295B]">Freight Calculator</button>
+                <div class="pt-4 px-4">
+                    <button onclick="navigateTo('quote')" class="w-full bg-[#C5A880] text-[#0B132B] font-semibold py-2.5 rounded">Get a Quote</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <section id="page-home" class="page-view animate-fade-in">
+            <div class="relative bg-[#0B132B] text-white py-24 lg:py-32 overflow-hidden">
+                <div class="absolute inset-0 opacity-25">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1920" alt="Global Logistics Shipping Container Background" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0B132B] via-[#0B132B]/80 to-transparent"></div>
+                
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="lg:w-2/3">
+                        <span class="text-[#C5A880] text-xs font-bold tracking-[0.3em] uppercase block mb-3">Architects of Global Supply Chains</span>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif leading-tight mb-6">
+                            Seamless Global Forwarding, <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A880] to-[#E5C494]">Absolute Reliability.</span>
+                        </h1>
+                        <p class="text-gray-300 text-lg mb-8 max-w-xl leading-relaxed">
+                            Nexus Global Trade orchestrates elite, enterprise-grade freight forwarding, customs brokerage, and supply chain logistics solutions optimized for international markets.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="navigateTo('quote')" class="bg-gradient-to-r from-[#C5A880] to-[#E5C494] text-[#0B132B] font-bold px-8 py-3.5 rounded shadow-lg hover:opacity-95 transition-all text-center">
+                                Book Air & Sea Freight
+                            </button>
+                            <button onclick="navigateTo('tracker')" class="border-2 border-white/80 hover:border-[#C5A880] hover:text-[#C5A880] text-white font-semibold px-8 py-3.5 rounded transition-all text-center">
+                                Track Live Cargo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-5xl mx-auto px-4 -mt-8 relative z-10">
+                <div class="bg-white p-6 rounded-xl shadow-xl border border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Instant Cargo Tracker</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-box-open absolute left-4 top-3.5 text-gray-400"></i>
+                            <input type="text" id="quick-track-input" placeholder="Enter Nexus Tracking Number (e.g., NEXUS-12345)" class="w-full pl-11 pr-4 py-3 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-[#0B132B]">
+                        </div>
+                    </div>
+                    <div class="pt-5 md:pt-0">
+                        <button onclick="triggerQuickTrack()" class="w-full bg-[#0B132B] text-white font-semibold py-3 rounded hover:bg-[#16295B] transition-colors shadow-md">
+                            Track Shipment
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-[#0B132B] font-serif mb-3">Our Core Logistics Capabilities</h2>
+                    <div class="w-16 h-1 mx-auto bg-[#C5A880] mb-4"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Providing precise control, premium customs compliance, and cost-efficient multimodal frameworks global trade requires.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80&w=600" alt="Ocean Cargo Ship Container Vessel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B132B]/80 to-transparent"></div>
+                            <span class="absolute bottom-4 left-4 bg-[#C5A880] text-[#0B132B] text-xs font-bold px-2.5 py-1 uppercase rounded">FCL / LCL</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-blue-50 text-[#0B132B] rounded-lg flex items-center justify-center mb-4 text-xl">
+                                <i class="fa-solid fa-ship"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B132B] mb-2">Ocean Freight Forwarding</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Cost-effective shipping strategies connecting global ports with tailored structural carrier allocations.</p>
+                            <button onclick="navigateTo('quote')" class="text-sm font-bold text-[#C5A880] hover:text-[#0B132B] inline-flex items-center space-x-2">
+                                <span>Calculate Sea Rates</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600" alt="Air Cargo Logistics Flight Plane" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B132B]/80 to-transparent"></div>
+                            <span class="absolute bottom-4 left-4 bg-[#C5A880] text-[#0B132B] text-xs font-bold px-2.5 py-1 uppercase rounded">Priority Expedited</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-blue-50 text-[#0B132B] rounded-lg flex items-center justify-center mb-4 text-xl">
+                                <i class="fa-solid fa-plane-departure"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B132B] mb-2">Global Air Freight</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Time-critical international air connections featuring daily schedules and dedicated premium handling paths.</p>
+                            <button onclick="navigateTo('quote')" class="text-sm font-bold text-[#C5A880] hover:text-[#0B132B] inline-flex items-center space-x-2">
+                                <span>Calculate Air Rates</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600" alt="Logistics Distribution Warehouse Center" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B132B]/80 to-transparent"></div>
+                            <span class="absolute bottom-4 left-4 bg-[#C5A880] text-[#0B132B] text-xs font-bold px-2.5 py-1 uppercase rounded">Secure Custody</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-blue-50 text-[#0B132B] rounded-lg flex items-center justify-center mb-4 text-xl">
+                                <i class="fa-solid fa-warehouse"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B132B] mb-2">Warehousing & Customs</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Full legal clearing frameworks paired with ultra-secure cross-dock global facility architectures.</p>
+                            <button onclick="navigateTo('services')" class="text-sm font-bold text-[#C5A880] hover:text-[#0B132B] inline-flex items-center space-x-2">
+                                <span>Explore Customs Services</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#0B132B] text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold font-serif mb-4">Nexus High-Density Transatlantic Shipping Lanes</h2>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                We manage thousands of distinct intercontinental transit paths. Use our tracking component or rate engine below to integrate your supply chain seamlessly into our primary corridors.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-circle text-[#C5A880] text-xs"></i>
+                                    <span>Asia-Pacific Mega Hubs (Shenzhen, Singapore, Tokyo)</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-circle text-[#C5A880] text-xs"></i>
+                                    <span>Eurozone Trade Gateways (Rotterdam, Antwerp, Frankfurt)</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-circle text-[#C5A880] text-xs"></i>
+                                    <span>Americas Strategic Terminals (LA, Houston, New York)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2 relative bg-[#111C3A] rounded-2xl p-4 border border-gray-800 shadow-inner overflow-hidden min-h-[350px] flex items-center justify-center">
+                            <div class="absolute inset-0 opacity-40 mix-blend-overlay">
+                                <img src="https://images.unsplash.com/photo-1524661135339-9140b00787e3?auto=format&fit=crop&q=80&w=1000" alt="World Map Silhouette Graphic Layout" class="w-full h-full object-cover">
+                            </div>
+                            
+                            <svg class="w-full h-64 relative z-10" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="150" cy="180" r="6" fill="#C5A880" class="animate-ping" />
+                                <circle cx="150" cy="180" r="4" fill="#C5A880" />
+                                <text x="130" y="165" fill="#ffffff" font-size="10" font-weight="bold">Los Angeles Hub</text>
+                                
+                                <circle cx="420" cy="120" r="6" fill="#C5A880" class="animate-ping" style="animation-delay: 1s;" />
+                                <circle cx="420" cy="120" r="4" fill="#C5A880" />
+                                <text x="400" y="105" fill="#ffffff" font-size="10" font-weight="bold">Rotterdam Hub</text>
+
+                                <circle cx="680" cy="220" r="6" fill="#C5A880" class="animate-ping" style="animation-delay: 2s;" />
+                                <circle cx="680" cy="220" r="4" fill="#C5A880" />
+                                <text x="660" y="205" fill="#ffffff" font-size="10" font-weight="bold">Singapore Hub</text>
+
+                                <path d="M 150 180 Q 285 130 420 120" fill="none" stroke="#C5A880" stroke-width="2" stroke-dasharray="6,4" class="animate-dash" />
+                                <path d="M 420 120 Q 550 150 680 220" fill="none" stroke="#C5A880" stroke-width="2" stroke-dasharray="6,4" />
+                                <path d="M 680 220 Q 415 280 150 180" fill="none" stroke="#C5A880" stroke-width="1.5" stroke-dasharray="4,4" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-services" class="page-view hidden animate-fade-in py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-[#C5A880] text-xs font-bold uppercase tracking-widest block mb-2">Our Premium Scope</span>
+                    <h1 class="text-4xl font-bold font-serif text-[#0B132B]">Comprehensive International Logistical Capabilities</h1>
+                    <div class="w-20 h-1 bg-[#C5A880] mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex space-x-6">
+                        <div class="text-3xl text-[#C5A880]"><i class="fa-solid fa-boxes-packing"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0B132B] mb-2">Customs Brokerage Compliance</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Our in-house compliance specialists clear complex multi-jurisdictional tariffs securely, minimizing storage risk profile liabilities.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex space-x-6">
+                        <div class="text-3xl text-[#C5A880]"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0B132B] mb-2">Intermodal Land Transports</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Door-to-door high-capacity tracking trucks supporting final mile point hand-offs seamlessly.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex space-x-6">
+                        <div class="text-3xl text-[#C5A880]"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0B132B] mb-2">Full Cargo Indemnity Insurance</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Underwritten premium maritime insurance solutions offering robust structural financial safety margins.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex space-x-6">
+                        <div class="text-3xl text-[#C5A880]"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0B132B] mb-2">Cold-Chain & Hazardous Materials</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Precision environment-controlled transportation networks specialized for sensitive pharma and industrial chemicals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-tracker" class="page-view hidden animate-fade-in py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+                    <div class="bg-[#0B132B] p-8 text-white">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div>
+                                <h1 class="text-2xl font-bold font-serif mb-1">Enterprise Consignment Tracking</h1>
+                                <p class="text-xs text-gray-400">Real-time distributed ledger status overview</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <input type="text" id="dashboard-track-input" placeholder="e.g. NEXUS-12345" class="bg-[#16295B] border border-gray-700 rounded px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C5A880] uppercase w-48">
+                                <button onclick="executeTrackingSearch()" class="bg-[#C5A880] text-[#0B132B] font-bold px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity">
+                                    Query
+                        </button>
+                    </div>
+                        </div>
+                    </div>
+
+                    <div id="tracker-default-state" class="p-12 text-center">
+                        <div class="w-16 h-16 bg-gray-50 border border-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-400 text-xl">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-1">No Active Tracking Queries Identified</h3>
+                        <p class="text-sm text-gray-500 max-w-sm mx-auto mb-4">Input an active system ledger sequence string like <b class="text-gray-700">NEXUS-12345</b> or <b class="text-gray-700">NEXUS-78901</b> to analyze shipping milestones.</p>
+                        <div class="flex justify-center gap-3">
+                            <button onclick="fillMockAndTrack('NEXUS-12345')" class="text-xs bg-gray-100 hover:bg-gray-200 text-gray-600 px-3 py-1.5 rounded">Demo: Sample In-Transit</button>
+                            <button onclick="fillMockAndTrack('NEXUS-78901')" class="text-xs bg-gray-100 hover:bg-gray-200 text-gray-600 px-3 py-1.5 rounded">Demo: Sample Custom Hold</button>
+                        </div>
+                    </div>
+
+                    <div id="tracker-result-state" class="hidden p-8">
+                        <div class="border-b border-gray-100 pb-6 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <span class="text-xs font-bold text-gray-400 uppercase block">Waybill Reference</span>
+                                <h2 id="display-tracking-id" class="text-xl font-bold text-[#0B132B]">NEXUS-12345</h2>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 text-left sm:text-right">
+                                <div>
+                                    <span class="text-xs font-bold text-gray-400 uppercase block">Freight Modality</span>
+                                    <span id="display-modality" class="text-sm font-semibold text-gray-700">Ocean Cargo (FCL)</span>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold text-gray-400 uppercase block">Est. Delivery</span>
+                                    <span id="display-eta" class="text-sm font-semibold text-emerald-600">July 08, 2026</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative py-8">
+                            <div class="absolute top-1/2 left-4 right-4 h-1 bg-gray-100 -translate-y-1/2 z-0 hidden md:block"></div>
+                            <div id="stepper-progress-fill" class="absolute top-1/2 left-4 h-1 bg-gradient-to-r from-[#0B132B] to-[#C5A880] -translate-y-1/2 z-0 transition-all duration-500 hidden md:block" style="width: 33%"></div>
+
+                            <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
+                                <div id="step-0" class="step-node text-center flex md:flex-col items-center md:items-center gap-4 md:gap-2">
+                                    <div class="step-icon-circle w-10 h-10 rounded-full bg-gray-100 border-2 border-gray-200 text-gray-400 flex items-center justify-center transition-all duration-300">
+                                        <i class="fa-solid fa-file-invoice"></i>
+                                    </div>
+                                    <div class="text-left md:text-center">
+                                        <h4 class="text-xs font-bold text-gray-800 uppercase tracking-wide">Order Received</h4>
+                                        <p class="text-xxs text-gray-500 font-mono">Manifest Vault Validated</p>
+                                    </div>
+                                </div>
+                                <div id="step-1" class="step-node text-center flex md:flex-col items-center md:items-center gap-4 md:gap-2">
+                                    <div class="step-icon-circle w-10 h-10 rounded-full bg-gray-100 border-2 border-gray-200 text-gray-400 flex items-center justify-center transition-all duration-300">
+                                        <i class="fa-solid fa-dolly"></i>
+                                    </div>
+                                    <div class="text-left md:text-center">
+                                        <h4 class="text-xs font-bold text-gray-800 uppercase tracking-wide">In Transit</h4>
+                                        <p class="text-xxs text-gray-500 font-mono">Ocean Carrier En Route</p>
+                                    </div>
+                                </div>
+                                <div id="step-2" class="step-node text-center flex md:flex-col items-center md:items-center gap-4 md:gap-2">
+                                    <div class="step-icon-circle w-10 h-10 rounded-full bg-gray-100 border-2 border-gray-200 text-gray-400 flex items-center justify-center transition-all duration-300">
+                                        <i class="fa-solid fa-passport"></i>
+                                    </div>
+                                    <div class="text-left md:text-center">
+                                        <h4 class="text-xs font-bold text-gray-800 uppercase tracking-wide">Customs Clearance</h4>
+                                        <p class="text-xxs text-gray-500 font-mono">Import Entry Assessment</p>
+                                    </div>
+                                </div>
+                                <div id="step-3" class="step-node text-center flex md:flex-col items-center md:items-center gap-4 md:gap-2">
+                                    <div class="step-icon-circle w-10 h-10 rounded-full bg-gray-100 border-2 border-gray-200 text-gray-400 flex items-center justify-center transition-all duration-300">
+                                        <i class="fa-solid fa-house-chimney-crack"></i>
+                                    </div>
+                                    <div class="text-left md:text-center">
+                                        <h4 class="text-xs font-bold text-gray-800 uppercase tracking-wide">Delivered</h4>
+                                        <p class="text-xxs text-gray-500 font-mono">Consignee Signed Off</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <h3 class="text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-3"><i class="fa-solid fa-clock-rotate-left mr-1"></i> Operations Audit Trail</h3>
+                            <ul id="tracking-audit-logs" class="space-y-3 text-xs text-gray-600">
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-quote" class="page-view hidden animate-fade-in py-16">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 lg:col-span-2">
+                        <h2 class="text-2xl font-bold font-serif text-[#0B132B] mb-2">Instant Freight Rate Quoting Engine</h2>
+                        <p class="text-xs text-gray-500 mb-6">Input dimensions, velocity needs, and cargo routing matrices to generate instant routing costs.</p>
+                        
+                        <form id="quote-form" onsubmit="calculateFreightQuote(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Global Origin Port</label>
+                                    <select id="quote-origin" class="w-full bg-gray-50 border border-gray-200 rounded p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B132B]" required>
+                                        <option value="" disabled selected>Select Origin Location</option>
+                                        <option value="APAC">Shanghai / Shenzhen (CNAPAC)</option>
+                                        <option value="EURO">Rotterdam / Antwerp (EUWEST)</option>
+                                        <option value="AMER">Los Angeles / New York (USAMER)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Destination Target Port</label>
+                                    <select id="quote-destination" class="w-full bg-gray-50 border border-gray-200 rounded p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B132B]" required>
+                                        <option value="" disabled selected>Select Target Location</option>
+                                        <option value="APAC">Shanghai / Shenzhen (CNAPAC)</option>
+                                        <option value="EURO">Rotterdam / Antwerp (EUWEST)</option>
+                                        <option value="AMER">Los Angeles / New York (USAMER)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Chargeable Mass Weight (KG)</label>
+                                    <input type="number" id="quote-weight" min="1" placeholder="e.g. 750" class="w-full bg-gray-50 border border-gray-200 rounded p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B132B]" required>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Transit Class Matrix Velocity</label>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <label class="border border-gray-200 rounded p-2.5 flex items-center justify-center space-x-2 text-xs font-medium cursor-pointer bg-white hover:bg-gray-50">
+                                            <input type="radio" name="speed" value="standard" checked class="text-[#0B132B] focus:ring-0">
+                                            <span>Economy Sea</span>
+                                        </label>
+                                        <label class="border border-gray-200 rounded p-2.5 flex items-center justify-center space-x-2 text-xs font-medium cursor-pointer bg-white hover:bg-gray-50">
+                                            <input type="radio" name="speed" value="express" class="text-[#0B132B] focus:ring-0">
+                                            <span>Premium Air</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-[#0B132B] text-white font-bold py-3 rounded shadow-md hover:bg-[#16295B] transition-colors uppercase text-sm tracking-wider mt-4">
+                                Generate Pricing Matrix
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="bg-gradient-to-b from-[#0B132B] to-[#12224D] rounded-2xl p-6 text-white shadow-xl border border-gray-800">
+                        <h3 class="text-lg font-bold font-serif mb-1">Quotation Document Result</h3>
+                        <p class="text-xxs text-gray-400 border-b border-gray-800 pb-4 mb-6">Real-time localized estimation index values</p>
+                        
+                        <div id="quote-placeholder-state" class="text-center py-12 text-gray-400">
+                            <i class="fa-solid fa-calculator text-3xl mb-3 text-gray-600"></i>
+                            <p class="text-xs">Specify routing locations and load details to activate pricing calculations.</p>
+                        </div>
+
+                        <div id="quote-results-state" class="hidden space-y-6">
+                            <div class="text-center bg-[#070D1F] p-4 rounded-xl border border-gray-800">
+                                <span class="text-xxs font-bold text-[#C5A880] uppercase tracking-widest block mb-1">Estimated Invoice Matrix</span>
+                                <span id="res-cost" class="text-3xl font-extrabold text-white tracking-tight">$0.00</span>
+                                <span class="text-xs text-gray-400 block mt-1">All-Inclusive Port-to-Port Tariff</span>
+                            </div>
+
+                            <div class="space-y-3 text-xs border-b border-gray-800 pb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-400">Transit Duration Framework:</span>
+                                    <span id="res-time" class="font-bold text-white">0 Days</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-400">Base Freight Allocation Index:</span>
+                                    <span id="res-base" class="font-mono text-gray-300">$0.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-400">Fuel & Security Surcharges:</span>
+                                    <span id="res-surcharge" class="font-mono text-gray-300">$0.00</span>
+                                </div>
+                            </div>
+
+                            <button onclick="triggerMockBooking()" class="w-full bg-gradient-to-r from-[#C5A880] to-[#E5C494] text-[#0B132B] font-bold py-3 rounded shadow-lg hover:opacity-90 transition-opacity uppercase text-xs tracking-wider">
+                                Confirm & Book Cargo Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0B132B] text-gray-400 text-xs border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center space-x-2 text-white mb-4">
+                    <div class="w-6 h-6 bg-[#C5A880] rounded flex items-center justify-center text-[#0B132B] font-bold text-xs">N</div>
+                    <span class="font-bold tracking-wider text-sm">NEXUS GLOBAL TRADE</span>
+                </div>
+                <p class="leading-relaxed text-gray-400">
+                    Premium enterprise multimodal freight brokerage systems servicing high-volume global importers, manufacturing networks, and cross-dock operations.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold uppercase tracking-wider mb-4 text-xs">Corporate Compliance Channels</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-[#C5A880]">SOLAS Container Weighing Protocols</a></li>
+                    <li><a href="#" class="hover:text-[#C5A880]">Incoterms 2020 Regulatory Matrix</a></li>
+                    <li><a href="#" class="hover:text-[#C5A880]">FMC Licensed Freight Forwarder Indexes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold uppercase tracking-wider mb-4 text-xs">Global Headquarter Hubs</h4>
+                <p class="leading-relaxed mb-2 text-gray-300">
+                    Marina District Commercial Towers, <br>Lagos, Nigeria.
+                </p>
+                <span class="block font-mono text-gray-400"><i class="fa-solid fa-phone text-xxs mr-1"></i> +234 (1) 455-NEXUS</span>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-800 mt-8 pt-6 text-center text-gray-500">
+            &copy; 2026 Nexus Global Trade Inc. All global operations, container manifests, and air customs clearances strictly regulated.
+        </div>
+    </footer>
+
+    <script>
+        // MOCK DATA STORES FOR THE SIMULATED APPLICATION SERVICES
+        const MOCK_TRACKING_DATABASE = {
+            "NEXUS-12345": {
+                modality: "Ocean Freight (FCL Container)",
+                eta: "July 12, 2026",
+                currentStep: 1, // 0-based index corresponding to "In Transit"
+                logs: [
+                    { time: "2026-06-24 09:15", msg: "Vessel departed transshipment seaport hub Shanghai." },
+                    { time: "2026-06-21 14:30", msg: "Export customs export validation cleared safely at terminal gate." },
+                    { time: "2026-06-19 11:00", msg: "Origin yard container manifest processing finalized." }
+                ]
+            },
+            "NEXUS-78901": {
+                modality: "Air Freight Cargo (Priority)",
+                eta: "June 28, 2026",
+                currentStep: 2, // 0-based index corresponding to "Customs Clearance"
+                logs: [
+                    { time: "2026-06-25 08:00", msg: "Shipment held at destination terminal for entry regulatory auditing." },
+                    { time: "2026-06-24 22:45", msg: "Air cargo flight arrival landed at localized airport hub." },
+                    { time: "2026-06-23 16:15", msg: "Consignment checked out from departure air base airport." }
+                ]
+            }
+        };
+
+        // CLIENT ROUTER PATTERN CONTROLLER INTERACTION
+        function navigateTo(pageId) {
+            // Hide all views
+            document.querySelectorAll('.page-view').forEach(element => {
+                element.classList.add('hidden');
+            });
+            
+            // Unveil requested container frame
+            const targetPage = document.getElementById(`page-${pageId}`);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            // Sync visual active state on navigation header buttons
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if(link.getAttribute('onclick').includes(pageId)) {
+                    link.classList.remove('text-gray-300');
+                    link.classList.add('text-[#C5A880]', 'border-b-2', 'border-[#C5A880]', 'pb-1');
+                } else {
+                    link.classList.add('text-gray-300');
+                    link.classList.remove('text-[#C5A880]', 'border-b-2', 'border-[#C5A880]', 'pb-1');
+                }
+            });
+
+            // Collapse Mobile drawer overlay if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+            
+            // Scroll to view header smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // TRIGGER TRACKING REDIRECTION FROM THE HOME BAR QUICK SEARCH
+        function triggerQuickTrack() {
+            const rawVal = document.getElementById('quick-track-input').value.trim();
+            if(!rawVal) return alert("Please specify a structured Waybill search sequence string.");
+            
+            // Sync values to the main dashboard module input text box view node
+            document.getElementById('dashboard-track-input').value = rawVal;
+            navigateTo('tracker');
+            executeTrackingSearch();
+        }
+
+        function fillMockAndTrack(waybillStr) {
+            document.getElementById('dashboard-track-input').value = waybillStr;
+            executeTrackingSearch();
+        }
+
+        // CORE SHIPMENT TRACKER UI RENDER LOGIC
+        function executeTrackingSearch() {
+            const trackingQueryKey = document.getElementById('dashboard-track-input').value.trim().toUpperCase();
+            const defaultPanel = document.getElementById('tracker-default-state');
+            const resultPanel = document.getElementById('tracker-result-state');
+
+            if (!trackingQueryKey) {
+                alert("Please provide a tracking identification reference code.");
+                return;
+            }
+
+            const activeRecord = MOCK_TRACKING_DATABASE[trackingQueryKey];
+
+            if (!activeRecord) {
+                alert(`Waybill identifier "${trackingQueryKey}" was not processed within this platform node. Try using the sample triggers provided.`);
+                defaultPanel.classList.remove('hidden');
+                resultPanel.classList.add('hidden');
+                return;
+            }
+
+            // Render tracking payload values
+            defaultPanel.classList.add('hidden');
+            resultPanel.classList.remove('hidden');
+
+            document.getElementById('display-tracking-id').innerText = trackingQueryKey;
+            document.getElementById('display-modality').innerText = activeRecord.modality;
+            document.getElementById('display-eta').innerText = activeRecord.eta;
+
+            // Handle Stepper Nodes Layout Updating dynamically
+            const targetStepIndex = activeRecord.currentStep;
+            
+            // Adjust linear fill progress percent bar width metrics
+            const fillPercentages = ["0%", "33%", "66%", "100%"];
+            document.getElementById('stepper-progress-fill').style.width = fillPercentages[targetStepIndex];
+
+            // Color-code the individual milestones based on active track record values
+            for (let i = 0; i < 4; i++) {
+                const nodeElement = document.getElementById(`step-${i}`);
+                const iconCircle = nodeElement.querySelector('.step-icon-circle');
+                const headerTitle = nodeElement.querySelector('h4');
+
+                if (i <= targetStepIndex) {
+                    // Complete or active milestones
+                    iconCircle.className = "step-icon-circle w-10 h-10 rounded-full bg-[#0B132B] border-2 border-[#C5A880] text-[#C5A880] flex items-center justify-center font-bold shadow-md z-10 scale-110";
+                    headerTitle.className = "text-xs font-bold text-[#0B132B] uppercase tracking-wide";
+                } else {
+                    // Future pending steps
+                    iconCircle.className = "step-icon-circle w-10 h-10 rounded-full bg-white border-2 border-gray-200 text-gray-300 flex items-center justify-center font-normal z-10";
+                    headerTitle.className = "text-xs font-semibold text-gray-400 uppercase tracking-wide";
+                }
+            }
+
+            // Flush and render audit ledger trace log list loops
+            const logsContainer = document.getElementById('tracking-audit-logs');
+            logsContainer.innerHTML = "";
+            activeRecord.logs.forEach(logItem => {
+                const itemLI = document.createElement('li');
+                itemLI.className = "flex items-start space-x-2 border-l-2 border-gray-200 pl-3 py-1";
+                itemLI.innerHTML = `
+                    <span class="font-mono text-gray-400 font-medium whitespace-nowrap">${logItem.time}</span>
+                    <span class="text-gray-700 font-medium">${logItem.msg}</span>
+                `;
+                logsContainer.appendChild(itemLI);
+            });
+        }
+
+        // FREIGHT QUOTE CALCULATOR CLIENT SIDE MATHEMATICS ENGINE
+        function calculateFreightQuote(event) {
+            event.preventDefault();
+
+            const origin = document.getElementById('quote-origin').value;
+            const destination = document.getElementById('quote-destination').value;
+            const weight = parseFloat(document.getElementById('quote-weight').value);
+            const speed = document.querySelector('input[name="speed"]:checked').value;
+
+            if (!origin || !destination) {
+                alert("Please declare both explicit origin points and target locations.");
+                return;
+            }
+
+            if (origin === destination) {
+                alert("Origin node configurations cannot directly match target terminal destinations. Please specify alternative cross-dock nodes.");
+                return;
+            }
+
+            // Configuration matrix multipliers 
+            let baseRateFactor = 2.4; // Base multiplier
+            if ((origin === 'APAC' && destination === 'AMER') || (origin === 'AMER' && destination === 'APAC')) baseRateFactor = 4.8;
+            if ((origin === 'APAC' && destination === 'EURO') || (origin === 'EURO' && destination === 'APAC')) baseRateFactor = 5.2;
+            if ((origin === 'AMER' && destination === 'EURO') || (origin === 'EURO' && destination === 'AMER')) baseRateFactor = 3.9;
+
+            // Velocity modifier variables
+            const speedMultiplier = (speed === 'express') ? 3.5 : 1.0;
+            const estimatedDays = (speed === 'express') ? "3 - 5 Days Air Cargo" : "24 - 32 Days Ocean Vessel";
+
+            // Calculate operational structural totals
+            const baseCost = weight * baseRateFactor * speedMultiplier;
+            const surcharges = baseCost * 0.125; // Constant 12.5% fuel/security assessment variable index
+            const localizedTotalInvoiceCost = baseCost + surcharges;
+
+            // Update DOM display content interface targets
+            document.getElementById('quote-placeholder-state').classList.add('hidden');
+            document.getElementById('quote-results-state').classList.remove('hidden');
+
+            document.getElementById('res-cost').innerText = `$${localizedTotalInvoiceCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            document.getElementById('res-time').innerText = estimatedDays;
+            document.getElementById('res-base').innerText = `$${baseCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            document.getElementById('res-surcharge').innerText = `$${surcharges.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
+
+        function triggerMockBooking() {
+            alert("🔒 Secure Booking Notice:\n\nYour freight allocation space has been held on our server. An international trade documentation specialist from Nexus Global Trade will contact you within 2 business hours to finalize shipping instructions.");
+        }
+
+        // RESPONSIVE INTERFACE COMPONENT EVENT LISTENERS
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menuState = document.getElementById('mobile-menu');
+            menuState.classList.toggle('hidden');
+        });
+
+        // Initialize state view defaults on initial window lifecycle trigger loads
+        window.addEventListener('DOMContentLoaded', () => {
+            navigateTo('home');
+        });
+    </script>
+</body>
+</html>
